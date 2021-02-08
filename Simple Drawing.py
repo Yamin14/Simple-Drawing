@@ -36,6 +36,8 @@ class Paint(Widget):
 			elif self.color == (0, 1, 1, 1):
 				self.color = (1, 0, 1, 1)
 			elif self.color == (1, 0, 1, 1):
+				self.color = (1, 1, 1, 1)
+			elif self.color == (1, 1, 1, 1):
 				self.color = (0, 1, 0, 1)
 			
 			with self.canvas:
