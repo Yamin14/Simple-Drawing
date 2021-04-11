@@ -1,7 +1,6 @@
 import kivy
 from kivy.app import App
 from kivy.uix.widget import Widget
-from kivy.uix.button import Button
 from kivy.graphics import Canvas
 from kivy.graphics import Color
 from kivy.graphics import Line
@@ -12,11 +11,14 @@ class Paint(Widget):
 		super(Paint, self).__init__(**kwargs)
 		self.m = 0
 		self.color = (0, 1, 0, 1)
+		
 		with self.canvas:
+			#white board
+			Color(rgba=(1, 1, 1, 1))
+			Rectangle(size=(720, 1440))
+
 			Color(rgba=self.color)
 			Rectangle(pos=(300, 1300), size=(140, 70))
-		
-		
 		
 	def on_touch_down(self, touch):
 		self.x1 = touch.pos[0]
@@ -36,8 +38,8 @@ class Paint(Widget):
 			elif self.color == (0, 1, 1, 1):
 				self.color = (1, 0, 1, 1)
 			elif self.color == (1, 0, 1, 1):
-				self.color = (1, 1, 1, 1)
-			elif self.color == (1, 1, 1, 1):
+				self.color = (0, 0, 0, 1)
+			elif self.color == (0, 0, 0, 1):
 				self.color = (0, 1, 0, 1)
 			
 			with self.canvas:
